@@ -1,5 +1,5 @@
-from random import randint, choice
 import pygame
+from random import randint, choice
 
 
 # Константы для размеров поля и сетки:
@@ -126,7 +126,7 @@ class Snake(GameObject):
     def draw(self):
         """Отрисовывает змейку на экране."""
         for position in self.positions[:-1]:
-            rect = (pygame.Rect(position, (GRID_SIZE, GRID_SIZE)))
+            rect = pygame.Rect(position, (GRID_SIZE, GRID_SIZE))
             pygame.draw.rect(screen, self.body_color, rect)
             pygame.draw.rect(screen, BORDER_COLOR, rect, 1)
 
@@ -173,6 +173,7 @@ def main():
     while True:
         clock.tick(SPEED)
         # перемещение змейки
+        handle_keys(snake)
         snake.move()
         # Тут опишите основную логику игры.
         if snake.get_head_position() == apple.position:
