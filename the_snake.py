@@ -164,7 +164,7 @@ def handle_keys(game_object):
                 game_object.next_direction = LEFT
             elif event.key == pygame.K_d and game_object.direction != LEFT:
                 game_object.next_direction = RIGHT
-            if event.key == pygame.K_UP and game_object.direction != DOWN:
+            elif event.key == pygame.K_UP and game_object.direction != DOWN:
                 game_object.next_direction = UP
             elif event.key == pygame.K_DOWN and game_object.direction != UP:
                 game_object.next_direction = DOWN
