@@ -156,6 +156,14 @@ def handle_keys(game_object):
             if event.key == pygame.K_ESCAPE:
                 pygame.quit()
                 raise SystemExit
+            elif event.key == pygame.K_w and game_object.direction != DOWN:
+                game_object.next_direction = UP
+            elif event.key == pygame.K_s and game_object.direction != UP:
+                game_object.next_direction = DOWN
+            elif event.key == pygame.K_a and game_object.direction != RIGHT:
+                game_object.next_direction = LEFT
+            elif event.key == pygame.K_d and game_object.direction != LEFT:
+                game_object.next_direction = RIGHT
             if event.key == pygame.K_UP and game_object.direction != DOWN:
                 game_object.next_direction = UP
             elif event.key == pygame.K_DOWN and game_object.direction != UP:
